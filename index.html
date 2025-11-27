@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FitZone — Gym Workout Hub</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Style CSS -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">FITZONE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#workouts">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Coaching</a></li>
+      </ul>
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+        <button class="btn btn-outline-accent btn-sm">Login</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="container">
+  <div class="hero row g-4 align-items-center fade-in-up">
+    <div class="col-lg-7">
+      <div class="hero-tag">
+        <span class="badge-dot"></span>
+        <span>Smart home & gym workouts · Free</span>
+      </div>
+
+      <h1 class="hero-title">Transform your body with 10–20 minute sessions.</h1>
+      <p class="hero-sub">
+        Follow along with science-backed workouts, from full-body HIIT to targeted core sessions.
+        No fancy equipment needed — just hit play and move.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <a href="#workouts" class="btn btn-primary">Start a workout</a>
+        <button class="btn btn-ghost">Browse all programs</button>
+      </div>
+
+      <div class="hero-metrics">
+        <div>
+          <div class="metric-label">Workouts</div>
+          <div class="metric-value">30+ guided</div>
+        </div>
+        <div>
+          <div class="metric-label">Average time</div>
+          <div class="metric-value">12 min / day</div>
+        </div>
+        <div>
+          <div class="metric-label">Equipment</div>
+          <div class="metric-value">Bodyweight-first</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="hero-right-card">
+        <div class="hero-thumb-wrap">
+          <!-- sample image: people exercising -->
+          <img src="https://images.pexels.com/photos/7991653/pexels-photo-7991653.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="People exercising in gym">
+          <div class="hero-live-pill">
+            <span class="dot"></span>
+            <span>HIIT · 10 min · Sweat session</span>
+          </div>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M8 5v14l11-7z" fill="#22c55e"/>
+              </svg>
+              <span>Tap any workout to play</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats-mini">
+          <span>🔥 Most popular today</span>
+          <span>Beginner friendly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- FILTERS -->
+  <section class="filter-bar">
+    <div class="search-box flex-grow-1" style="max-width:320px;">
+      <input id="search" type="search" class="form-control" placeholder="Search workouts (e.g. squat, push-ups, core)">
+    </div>
+
+    <div class="d-flex flex-column align-items-end gap-2">
+      <div class="category-pills" id="categoryPills">
+        <button class="btn-filter active" data-cat="all">All</button>
+        <button class="btn-filter" data-cat="fullbody">Full Body</button>
+        <button class="btn-filter" data-cat="upper">Upper</button>
+        <button class="btn-filter" data-cat="lower">Lower</button>
+        <button class="btn-filter" data-cat="core">Core</button>
+        <button class="btn-filter" data-cat="cardio">Cardio</button>
+      </div>
+      <div class="filter-count">
+        Showing <span id="count">0</span> workouts
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO GRID -->
+  <section id="workouts" class="row g-4">
+
+    <!-- Card 1 -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="10 minute full body hiit"
+         data-cat="fullbody"
+         data-id="UItWltVZZmE">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video4.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <!-- if you want to show a thumbnail video: muted playsinline and preload="metadata" -->
+          <video class="video-thumb" src="./upload/videos/video4.mp4" muted playsinline preload="metadata" aria-label="10 minute full body hiit thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Full Body · Beginner</span>
+          <h5 class="card-title">10-Minute Full-Body HIIT</h5>
+          <div class="card-meta">
+            <span>⏱ 10 min</span>
+            <span>•</span>
+            <span>No equipment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="beginner push ups routine"
+         data-cat="upper"
+         data-id="IODxDxX7oi4">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video5.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <video class="video-thumb" src="./upload/videos/video5.mp4" muted playsinline preload="metadata" aria-label="Push-ups thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Upper Body · Beginner</span>
+          <h5 class="card-title">Beginner Push-ups Routine</h5>
+          <div class="card-meta">
+            <span>⏱ 8 min</span>
+            <span>•</span>
+            <span>Push-ups progressions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="perfect squat tutorial legs"
+         data-cat="lower"
+         data-id="aclHkVaku9U">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video6.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <video class="video-thumb" src="./upload/videos/video6.mp4" muted playsinline preload="metadata" aria-label="Squat tutorial thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Lower Body · All levels</span>
+          <h5 class="card-title">Perfect Squat Tutorial</h5>
+          <div class="card-meta">
+            <span>⏱ 6 min</span>
+            <span>•</span>
+            <span>Glutes · Quads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="core strengthening abs 5 minute"
+         data-cat="core"
+         data-id="p3FfPA2zY2o">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video7.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <video class="video-thumb" src="./upload/videos/video7.mp4" muted playsinline preload="metadata" aria-label="Core workout thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Core · Intermediate</span>
+          <h5 class="card-title">Core Strength — 5 Minutes</h5>
+          <div class="card-meta">
+            <span>⏱ 5 min</span>
+            <span>•</span>
+            <span>Abs · Obliques</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="quick cardio workout fat burn"
+         data-cat="cardio"
+         data-id="ml6cT4AZdqI">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video8.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <video class="video-thumb" src="./upload/videos/video8.mp4" muted playsinline preload="metadata" aria-label="Cardio workout thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Cardio · All levels</span>
+          <h5 class="card-title">Quick Cardio Fat-Burn</h5>
+          <div class="card-meta">
+            <span>⏱ 12 min</span>
+            <span>•</span>
+            <span>High energy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 (extra full body) -->
+    <div class="col-12 col-sm-6 col-lg-4 fade-in-up video-col"
+         data-title="full body mobility stretch"
+         data-cat="fullbody"
+         data-id="k2KcjP7M5ao">
+      <div class="video-card h-100" data-bs-toggle="modal" data-bs-target="#videoModal" data-videoid="video9.mp4" role="button" tabindex="0">
+        <div class="position-relative">
+          <video class="video-thumb" src="./upload/videos/video9.mp4" muted playsinline preload="metadata" aria-label="Mobility workout thumbnail"></video>
+          <div class="play-overlay">
+            <div class="play-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#22c55e"/></svg>
+              <span>Play</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="badge-cat">Full Body · Recovery</span>
+          <h5 class="card-title">Full-Body Mobility Flow</h5>
+          <div class="card-meta">
+            <span>⏱ 15 min</span>
+            <span>•</span>
+            <span>Stretch & restore</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROGRAMS / CTA -->
+  <section id="programs">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-7">
+        <div class="program-card h-100">
+          <h3>30-day starter program</h3>
+          <p>Perfect if you’re just getting back into training or starting fresh.</p>
+          <ul class="mt-2">
+            <li>Day-by-day schedule using the workouts above</li>
+            <li>3 intensity levels so you can scale up safely</li>
+            <li>Mix of strength, cardio and mobility days</li>
+          </ul>
+          <button class="btn btn-ghost mt-3">Download PDF plan</button>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="program-card h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h3>Need personal guidance?</h3>
+            <p>Book a quick call with a coach to customize this plan to your schedule and equipment.</p>
+          </div>
+          <button id="contact" class="btn btn-primary mt-3 align-self-start">Talk to a coach</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- VIDEO MODAL -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content" style="background:#020617;border-radius:1rem;border:1px solid rgba(148,163,184,0.4);">
+      <div class="modal-body p-0 position-relative">
+        <button type="button"
+                class="btn-close position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                style="filter:invert(1);"></button>
+        <div class="ratio ratio-16x9" style="background:#000;">
+          <iframe id="videoFrame"
+                  src=""
+                  title="Exercise video"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <span>© FitZone 2025 · Built for gym & home workouts</span>
+    <span>HTML · Bootstrap 5 · jQuery</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/app.js"></script>
+</body>
+</html>
